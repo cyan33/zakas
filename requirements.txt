@@ -1,0 +1,4 @@
+SpeechRecognition
+getch
+gTTS
+pyaudio

@@ -1,19 +1,27 @@
-# zakas
+# Zakas
 
-:robot: An AI bot to automate your daily life, implemented in Python. It's named after Nicolas Zakas, the first person who led me into the world of programming.
+> :robot: An AI bot to automate your daily life, implemented in Python.
+
+Zakas is named after *[Nicolas Zakas](https://twitter.com/slicknet)*, who led me into the world of programming.
 
 ## Features
 
 
 
-## Dependencies
+## Usage
 
-* PyAudio
-* gTTS
-* SpeechRecognition
-* mp321
-* portaudio
+Install the dependencies:
 
+```sh
+brew install mp321 portaudio
+pip install -r requirements.txt
+```
+
+And run the script:
+
+```sh
+python zakas.py
+```
 
 ## Reference
 

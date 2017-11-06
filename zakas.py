@@ -17,7 +17,7 @@ def recordAudio():
     # Record Audio
     r = sr.Recognizer()
     with sr.Microphone() as source:
-        print("Say something!")
+        speak("How can I help you?")
         audio = r.listen(source)
 
     # Speech recognition using Google Speech Recognition
@@ -36,24 +36,35 @@ def recordAudio():
 
 
 def zakas(data):
+    understand = False
+
     if "how are you" in data:
+        understand = True
         speak("I am fine")
 
     if ("marriage" in data or "sex" in data) and ("you" in data or "your" in data):
+        understand = True
         speak("I don't feel like talking about my personal life")
 
     if "time" in data:
+        understand = True
         speak(ctime())
 
     if "where is" in data:
+        understand = True
         data = data.split(" ")
         location = data[2]
         speak("Hold on Chang, I will show you where " + location + " is.")
         os.system("chromium-browser https://www.google.nl/maps/place/" + location + "/&amp;")
+    if not understand:
+        speak("""I'm truly sorry. My dictionary is rather poor right now and cannot get what you meant. Do you have any interest in contributing my dictionary,
+              in the following url?""")
+        print("https://github.com/thomasyimgit/zakas")
+
 
 
 # initialization
-speak("Hi Chang, How can I help you?")
+speak("Lord cast your light upon us. For the night is dark and full of terrors.")
 while 1:
     print("press Enter to say something to Zakas!")
     if getch() == "\n":
