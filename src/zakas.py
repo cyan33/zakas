@@ -6,6 +6,8 @@ from time import ctime
 from getch import getch
 from gtts import gTTS
 
+from dict import dict
+
 
 def speak(audioString):
     print(audioString)
@@ -36,30 +38,29 @@ def recordAudio():
 
 
 def zakas(data):
-    understand = False
+    # loop through the basic responses
+    for keyword, res in enumerate(dict):
+        if data in keyword:
+            speak(res)
+            return
 
-    if "how are you" in data:
-        understand = True
-        speak("I am fine")
-
-    if ("marriage" in data or "sex" in data) and ("you" in data or "your" in data):
-        understand = True
-        speak("I don't feel like talking about my personal life")
-
+    # todo: move these to a separated handler utility file
     if "time" in data:
-        understand = True
         speak(ctime())
+        return
 
     if "where is" in data:
-        understand = True
         data = data.split(" ")
         location = data[2]
         speak("Hold on Chang, I will show you where " + location + " is.")
         os.system("chromium-browser https://www.google.nl/maps/place/" + location + "/&amp;")
-    if not understand:
-        speak("""I'm truly sorry. My dictionary is rather poor right now and cannot get what you meant. Do you have any interest in contributing my dictionary,
+        return
+
+    # if voice not comprehended
+    speak("""I'm truly sorry. My dictionary is rather poor right now and cannot get what you meant. Do you have any interest in contributing my dictionary,
               in the following url?""")
-        print("https://github.com/thomasyimgit/zakas")
+    print("https://github.com/thomasyimgit/zakas")
+    return
 
 
 

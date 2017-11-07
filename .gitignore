@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# generated audio from mpg321
+*.mp3
+
 # Distribution / packaging
 .Python
 env/
