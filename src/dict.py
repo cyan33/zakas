@@ -4,5 +4,6 @@
 
 dict = {
     "how are you": "I'm fine",
+    "how old are you": "I'm kind of a baby as you may know",
     "marriage": "Sorry, I don't feel like talking about my personal life"
 }
