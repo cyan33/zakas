@@ -9,6 +9,7 @@ from gtts import gTTS
 
 from dict import dict
 from utils import println
+from handlers.Youtube import Youtube
 
 class Zakas:
     def __init__(self):
@@ -39,7 +40,7 @@ class Zakas:
         except sr.RequestError as e:
             println("Could not request results from Google Speech Recognition service; {0}".format(e))
 
-        return data
+        return data.lower()
 
 
     def respond(self, data):
@@ -60,6 +61,11 @@ class Zakas:
             self.speak("Hold on Chang, I will show you where " + location + " is.")
             os.system("chromium-browser https://www.google.nl/maps/place/" + location + "/&amp;")
             return
+
+        if "youtube" in data:
+            y = Youtube(data)
+            y.play()
+
 
         # if voice msg not comprehended
         self.speak("I'm truly sorry. My dictionary is rather poor right now and cannot get what you meant. Do you have any interest in contributing my dictionary,in the following url?")
