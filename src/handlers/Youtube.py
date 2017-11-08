@@ -24,6 +24,9 @@ class Youtube:
 
         song = soup.select_one('#results div[class="yt-lockup-content"]')
 
+        if not song:
+            return False
+
         # filter out the ads and banners
         while True:
             # if can find span[class="yt-badge-ad"], then it's an ad

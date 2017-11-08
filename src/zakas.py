@@ -9,6 +9,7 @@ from gtts import gTTS
 
 from dict import dict
 from utils import println
+
 from handlers.Youtube import Youtube
 
 class Zakas:
@@ -63,8 +64,10 @@ class Zakas:
             return
 
         if "youtube" in data:
+            self.speak("Hold on, I'm searching the result on Youtube.")
             y = Youtube(data)
             y.play()
+            return
 
 
         # if voice msg not comprehended
