@@ -19,8 +19,11 @@ If you are thinking of something intereting that zakas might/should be able to d
 Install the dependencies:
 
 ```sh
-brew install mpg321 portaudio
-pip install -r requirements.txt
+$ brew install mpg321 portaudio
+
+$ virtualenv env
+$ source bin/activate
+$ pip install -r requirements.txt
 ```
 
 And run the script (right now the simplest way to invoke zakas is to run the script, but in the future a GUI is definitely a good choice):

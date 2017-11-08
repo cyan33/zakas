@@ -2,3 +2,4 @@ SpeechRecognition
 getch
 gTTS
 pyaudio
+bs4
