@@ -1,16 +1,14 @@
 # Please first install all the dependencies from README
-
 import os
-from time import ctime
-
 import speech_recognition as sr
 from getch import getch
 from gtts import gTTS
+from time import ctime
 
+from handlers.Youtube import Youtube
 from dict import dict
 from utils import println
 
-from handlers.Youtube import Youtube
 
 class Zakas:
     def __init__(self):

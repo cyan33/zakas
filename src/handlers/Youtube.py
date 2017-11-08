@@ -1,9 +1,11 @@
-from bs4 import BeautifulSoup
+import sys
 import urllib2
 import webbrowser
+from bs4 import BeautifulSoup
+from voice_processing import filter_youtube
+sys.path.append('../')
+from utils import println
 
-from src.handlers.voice_processing import filter_youtube
-from src.utils import println
 
 class Youtube:
     def __init__(self, voice):
