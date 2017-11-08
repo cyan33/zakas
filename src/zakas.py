@@ -1,16 +1,15 @@
 # Please first install all the dependencies from README
 
 import os
-from time import ctime
-
 import speech_recognition as sr
 from getch import getch
 from gtts import gTTS
+from time import ctime
 
+from handlers import Youtube
 from dict import dict
 from utils import println
 
-from handlers.Youtube import Youtube
 
 class Zakas:
     def __init__(self):
@@ -65,7 +64,7 @@ class Zakas:
 
         if "youtube" in data:
             self.speak("Hold on, I'm searching the result on Youtube.")
-            y = Youtube(data)
+            y = Youtube.Youtube(data)
             y.play()
             return
 

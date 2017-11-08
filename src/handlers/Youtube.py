@@ -1,9 +1,13 @@
-from bs4 import BeautifulSoup
+import sys
 import urllib2
 import webbrowser
+from bs4 import BeautifulSoup
 
-from src.handlers.voice_processing import filter_youtube
-from src.utils import println
+from voice_processing import filter_youtube
+
+sys.path.append('../')
+import utils
+
 
 class Youtube:
     def __init__(self, voice):
@@ -14,7 +18,7 @@ class Youtube:
         voice = filter_youtube(voice)
 
         url = 'https://www.youtube.com/results?search_query=' + '+'.join(voice.split(' '))
-        println(url)
+        utils.println(url)
         return url
 
     def getVideoUrl(self):
