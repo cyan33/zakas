@@ -76,12 +76,13 @@ class Zakas:
 
 if __name__ == '__main__':
     z = Zakas()
-    z.speak("Lord cast your light upon us. For the night is dark and full of terrors.")
+    # z.speak("Lord cast your light upon us. For the night is dark and full of terrors.")
 
     while True:
         println("press Enter to say something to Zakas, or '0' to exit")
-        if getch() == "\n":
+        user_input = getch()
+        if user_input == "\n":
             z.respond(z.recordAudio())
-        elif getch == "0":
+        elif user_input == "0":
             break
 
