@@ -6,6 +6,7 @@ from gtts import gTTS
 from time import ctime
 
 from handlers.Youtube import Youtube
+from handlers.Google import Google
 from dict import dict
 from utils import println
 
@@ -43,7 +44,7 @@ class Zakas:
 
 
     def respond(self, data):
-        # loop through the basic responses
+        # loop through the basic / hard-coded responses
         for keyword, res in dict.items():
             if keyword in data:
                 self.speak(res)
@@ -67,10 +68,16 @@ class Zakas:
             y.play()
             return
 
+        if "google" in data:
+            self.speak("Hold on, I'm searching the result on Google.")
+            g = Google(data)
+            g.search()
+            return
+
 
         # if voice msg not comprehended
-        self.speak("I'm truly sorry. My dictionary is rather poor right now and cannot get what you meant. Do you have any interest in contributing my dictionary,in the following url?")
-        println("https://github.com/thomasyimgit/zakas")
+        self.speak("I'm truly sorry. Didn't get what you mean.")
+
         return
 
 
