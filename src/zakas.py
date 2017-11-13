@@ -48,7 +48,7 @@ class Zakas:
 
 if __name__ == '__main__':
     z = Zakas()
-    # greeting()
+    greeting()
 
     while True:
         println("press Enter to say something to Zakas, or '0' to exit")
@@ -56,5 +56,6 @@ if __name__ == '__main__':
         if user_input == "\n":
             z.respond(record())
         elif user_input == "0":
+            goodbye()
             break
 
