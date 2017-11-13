@@ -1,5 +1,6 @@
 from __future__ import print_function
 import os
+import datetime
 import speech_recognition as sr
 from colorprint import *
 from gtts import gTTS
@@ -37,3 +38,18 @@ def record():
         warn("Could not request results from Google Speech Recognition service; {0}".format(e))
 
     return data.lower()
+
+def greeting():
+    username = os.getlogin()
+    current_hour = datetime.datetime.now().hour
+    if current_hour < 12:
+        phase = "morning"
+    elif current_hour >= 12 and current_hour < 18:
+        phase = "afternoon"
+    else:
+        phase = "evening"
+
+    speak("Good {}, {}. What can I do for you?".format(phase, username))
+
+def goodbye():
+    speak("Take care. Have a nice day.")

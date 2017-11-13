@@ -11,6 +11,8 @@ Try to say something to zakas!
 * "What's the time?"
 * "How old are you?"
 * "Where is Raleigh?"
+* "Play *Shape of You* from Youtube."
+* "Search *Friends* from Google"
 
 If you are thinking of something intereting that zakas might/should be able to do, feel free to open an issue!
 
@@ -34,5 +36,6 @@ cd ./src && python zakas.py
 
 ## Reference
 
-* Voice Recognition https://pythonspot.com/en/speech-recognition-using-google-speech-api/
+* Voice Recognition
+https://pythonspot.com/en/speech-recognition-using-google-speech-api/
 https://pythonspot.com/en/personal-assistant-jarvis-in-python/
