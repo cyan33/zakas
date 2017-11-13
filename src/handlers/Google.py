@@ -1,9 +1,13 @@
+import sys
 import webbrowser
+sys.path.append('../')
+from utils import *
 
 from voice_processing import filter_google
 
 class Google:
     def __init__(self, voice):
+        speak("Hold on, I'm searching the result on Google.")
         self.term = filter_google(voice)
         return
 
