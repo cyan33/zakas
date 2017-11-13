@@ -3,3 +3,4 @@ getch
 gTTS
 pyaudio
 bs4
+colorprint

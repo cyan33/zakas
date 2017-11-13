@@ -4,11 +4,13 @@ import webbrowser
 from bs4 import BeautifulSoup
 from voice_processing import filter_youtube
 sys.path.append('../')
-from utils import println
+from utils import *
+
 
 
 class Youtube:
     def __init__(self, voice):
+        speak("Hold on, I'm searching the result on Youtube.")
         self.url = self.buildQuery(voice)
 
     def buildQuery(self, voice):
