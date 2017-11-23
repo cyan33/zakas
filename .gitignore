@@ -5,6 +5,9 @@ __pycache__/
 
 .idea
 
+# the training result for the chatterbot
+db.sqlite3
+
 # C extensions
 *.so
 
