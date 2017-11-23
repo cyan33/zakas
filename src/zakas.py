@@ -1,27 +1,18 @@
 from getch import getch
-from time import ctime
 
 from handlers.Youtube import Youtube
 from handlers.Google import Google
-from dict import dict
+from chat import Bot
 from utils import *
 
 
 class Zakas:
     def __init__(self):
+        self.bot = Bot()
         pass
 
     def respond(self, data):
-        # loop through the basic / hard-coded responses
-        for keyword, res in dict.items():
-            if keyword in data:
-                speak(res)
-                return
-
         # todo: move these to a separated handler utility file
-        if "time" in data:
-            speak(ctime())
-            return
 
         if "where is" in data:
             data = data.split(" ")
@@ -40,9 +31,7 @@ class Zakas:
             g.search()
             return
 
-        # if voice msg not comprehended
-        speak("I'm truly sorry. Didn't get what you meant.")
-
+        self.bot.respondTo(data)
         return
 
 

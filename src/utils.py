@@ -52,4 +52,5 @@ def greeting():
     speak("Good {}, {}. What can I do for you?".format(phase, username))
 
 def goodbye():
-    speak("Take care. Have a nice day.")
+    phase = "day" if datetime.datetime.now().hour < 18 else "night"
+    speak("Take care. Have a good {}".format(phase))
